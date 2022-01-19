@@ -7,7 +7,7 @@ function loadEvent(){
      elem.insertAdjacentHTML("beforeend", `
      <p>text</p>
      `)  
-     elem.querySelector("h1").outerHTML = "" 
+     //elem.querySelector("h1").outerHTML = "" 
     }
 }
 window.addEventListener("load", loadEvent)
