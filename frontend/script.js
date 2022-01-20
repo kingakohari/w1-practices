@@ -1,13 +1,22 @@
-function loadEvent(){
+async function loadEvent(){
     console.log ("Page has loaded");
 
-    const list = document.querySelectorAll("section");
+        const root = document.querySelectorAll("#root");
 
-    for (const elem of list) {
-     elem.insertAdjacentHTML("beforeend", `
-     <p>text</p>
-     `)  
-     //elem.querySelector("h1").outerHTML = "" 
-    }
+        const countryRes = await fetch("https://restcountries.com/v3.1/all");
+        const countryArr = await countryRes.json();
+
+        //console.log(countryArr[0].name.common)
+
+        for (const country of countryArr) {
+            //console.log(country.name.common)
+
+            root.insertAdjacentHTML("beforeend", `
+            <section>
+                <h1>${country.name.common}</h1>
+                <p>${country.region}</p>
+            </section>
+            `)
+        }
 }
 window.addEventListener("load", loadEvent);
