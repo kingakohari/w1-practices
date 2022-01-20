@@ -11,12 +11,12 @@ async function loadEvent(){
         for (const country of countryArr) {
             //console.log(country.name.common)
 
-            root.insertAdjacentHTML("beforeend", `
+        root.insertAdjacentHTML("beforeend", `
             <section>
                 <h1>${country.name.common}</h1>
                 <p>${country.region}</p>
             </section>
             `)
         }
-}
+    }
 window.addEventListener("load", loadEvent);
