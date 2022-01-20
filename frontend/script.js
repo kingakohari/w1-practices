@@ -16,7 +16,7 @@ async function loadEvent(){
                 <h1>${country.name.common}</h1>
                 <p>${country.region}</p>
             </section>
-            `)
+            `);
         }
     }
 window.addEventListener("load", loadEvent);
